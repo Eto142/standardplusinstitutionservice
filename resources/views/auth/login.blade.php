@@ -123,19 +123,19 @@
     <!-- end account-pages -->
 
     <!-- JAVASCRIPT -->
-    <script src="./auth/libs/jquery/jquery.min.js"></script>
-    <script src="./auth/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./auth/libs/metismenu/metisMenu.min.js"></script>
-    <script src="./auth/libs/simplebar/simplebar.min.js"></script>
-    <script src="./auth/libs/node-waves/waves.min.js"></script>
+    <script src="{{ asset('auth/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('auth/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('auth/js/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('auth/js/simplebar.min.js') }}"></script>
+    <script src="{{ asset('auth/js/waves.min.js') }}"></script>
 
     <!-- validation init -->
-    <script src="./auth/js/pages/validation.init.js"></script>
+    <script src="{{ asset('auth/js/validation.init.js') }}"></script>
 
     <!-- App js -->
-    <script src="./auth/js/app.js"></script>
+    <script src="{{ asset('auth/js/app.js') }}"></script>
     <!-- Bootstrap Toasts Js -->
-    <script src="./auth/js/pages/bootstrap-toastr.init.js"></script>
+    <script src="{{ asset('auth/js/bootstrap-toastr.init.js') }}"></script>
 
     <!-- Custom Script -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
