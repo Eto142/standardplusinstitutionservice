@@ -7,7 +7,7 @@
 
 
 
-<div id="cdPromoHero" class="col-lg-12 feature-hero-with-fade cd-promo"><div class="container"><div class="row"><div id="cdPromoHeroContent" class="col-md-6 mt-5 pt-5 pb-3 text-left"><p class="text-uppercase lead" style="font-size:1.4rem;">Set your money to work</p><h1 id="cdPromoHeadline">A smarter way to grow savings</h1><p><img src="line.png" aria-hidden="true" sf-size="209" alt="Orange line"></p><div class="custom-bullet-list font-weight-bold mb-4"><ul><li>Flexible terms</li><li>Guaranteed return</li><li>Open with a minimum of $500</li></ul></div><p><a href="{{route('register')}}" title="Open an account" id="home_hero_cta_primary" class="btn btn-primary mx-0" data-sf-ec-immutable="">Open a CD</a>
+<div id="cdPromoHero" class="col-lg-12 feature-hero-with-fade cd-promo"><div class="container"><div class="row"><div id="cdPromoHeroContent" class="col-md-6 mt-5 pt-5 pb-3 text-left"><p class="text-uppercase lead" style="font-size:1.4rem;">A simple way to save</p><h1 id="cdPromoHeadline">Bank with confidence</h1><p><img src="line.png" aria-hidden="true" sf-size="209" alt="Orange line"></p><div class="custom-bullet-list font-weight-bold mb-4"><ul><li>Flexible account options</li><li>Reliable savings support</li><li>Easy online account opening</li></ul></div><p><a href="{{route('register')}}" title="Open an account" id="home_hero_cta_primary" class="btn btn-primary mx-0" data-sf-ec-immutable="">Open an account</a>
 </p>
 
 </p></div><div id="cdPromoHeroImage" class="col-md-6 mt-lg-5 mb-4 mb-lg-0 d-flex justify-content-center align-items-center"><img src="rate-cd_510_12mo-720x720.png" style="height:auto;" width="360" height="360" id="cdRate" alt="5.10% APY* on a 12-month CD"></div></div></div></div><div id="content" role="main"> 
