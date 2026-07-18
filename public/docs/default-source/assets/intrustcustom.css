@@ -1,0 +1,428 @@
+/* Updated 05/20/2024 */
+
+/* Change color of links in utility nav */
+.header-utility-mega-mega-menu .st-utilityNav ul a:hover {
+    color: #707070;
+}
+
+/* Add border-radius to login select lists */
+.header-utility-mega-mega-menu .st-logoAndSiteControls .languageSelect select {
+    border-radius: .25rem;
+}
+
+/* Add classes for containers with full bleed images */
+.img-full-bleed {
+  padding-top: 35px;
+}
+
+.img-bleed {
+  position: relative;
+  bottom: -25px;
+}
+
+/* Add class for a small text callout */
+.small-callout {
+  font-family: Proxima Nova, helvetica, arial, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #58595b;
+  letter-spacing: 2px;
+}
+
+/* Add class for highlighted paragraph */
+.highlight {
+  display: block;
+  padding: .8rem 1rem;
+  background-color: #E6E7E8;
+  border-radius: 4px;
+  line-height: 1.4;
+  color: #333333;
+} 
+
+/* Add margin below blog snippet blurb */
+.angled-cards .tile .blurb {
+  margin-bottom: 1rem;
+}
+
+/* Reduce bottom margin of paragraphs and increase bottom margin of lists in blog posts */
+.blog-detail .content p {
+  margin-bottom: 1.2rem;
+}
+
+.blog-detail .content ol,
+.blog-detail .content ul {
+  margin-bottom: 2rem;
+}
+
+/* Animate product card boxes to move up on hover */
+.inner-tiles .tile .box:active, 
+.inner-tiles .tile .box:focus, 
+.inner-tiles .tile .box:hover {
+    transform: translatey(-3px);
+}
+
+/* Add classes for containers with a smaller max width */
+.text-block {
+  max-width: 800px;
+}
+
+.paragraph-block {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add class for paragraph text callout */
+.paragraph-callout {
+  font-size: 1.2rem;
+  line-height: 28px;
+}
+
+/* Add class to create grouping of FAQ tiles */
+.faqTileGroup {
+  margin-bottom: 2rem;
+}
+
+/* Add class to alter display of text to stretch to 100% */
+.block-text {
+  display: block;
+  width: 100%;
+}
+
+/* Add class for navy background */
+.navyBackground {
+  background-color: #082247;
+  color: #ffffff;
+}
+
+.navyBackground a,
+.navyBackground p, 
+.navyBackground h1,
+.navyBackground h2,
+.navyBackground h3,
+.navyBackground h4,
+.navyBackground h5 {
+  color: #ffffff;
+}
+
+/* Add additional gray background classes */
+.veryLightGrayBackground {
+	background-color: #fbfbfb;
+}
+
+.lightGrayBackground {
+	background-color: #e6e7e8;
+}
+
+/* Vertically middle align global search icon */
+.header-utility-mega-mega-menu .st-search svg {
+    vertical-align: middle;
+}
+
+/* Remove bottom padding from Alert description */
+.alert-description p {
+	margin-bottom: 0;
+}
+
+/* Make links in the alert white */
+.alert a {
+	color: #ffffff;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* Center the alert message */
+section.alert > .container {
+	justify-content: center;
+}
+
+/* Fix top margin for hero image section */
+@media (max-width: 1199.98px) {
+	.feature-hero-with-fade {
+		margin-top: -122px;
+	}
+}
+
+@media (max-width: 991.98px) {
+	.feature-hero-with-fade {
+		margin-top: -84px;
+	}
+}
+
+@media (max-width: 767px) {
+	.feature-hero-with-fade {
+		margin-top: -74px;
+	}
+}
+
+/* Update styling of 3-column blog post listings */
+.angled-cards .tile .body {
+    padding: 0 25px 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.05);
+}
+
+.angled-cards .tile .photo {
+    margin-left: -25px;
+    margin-right: -25px;
+	height: 200px;
+}
+
+.angled-cards .tile .tags {
+    font-size: .8rem;
+    line-height: 1.2rem;
+	margin-top: .5rem;
+}
+
+.angled-cards .tile .title {
+    font-size: 1.2rem;
+}
+
+.angled-cards .tile .date {
+    display: none;
+}
+
+.angled-cards .tile .blurb {
+    margin-bottom: 30px;
+    font-size: .85rem;
+    line-height: 1.2rem;
+}
+
+@media (max-width: 767.98px) {
+	.angled-cards .tilesList .tile .blurb {
+		margin-bottom: 20px;
+	}
+}
+
+.angled-cards .tile .btn {
+	margin: 0;
+}
+
+/* Add a subtle floating box affect to an element */
+.floating-box {
+	padding: 1rem;
+    background-color: #fafafa;
+    box-shadow: 3px 3px 16px rgba(0,0,0,.1);
+}
+
+/* Add a checkmark icon to the left of a single link */
+.checklist-link {
+	padding-left: 26px;
+	background-image: url(../../../images/default-source/icons/icon-checkmark_circle-navy-300x300.png);
+    background-size: 20px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* Create a translucent navy background */
+.navy-translucent {
+  background-color: rgba(8,34,71,.85);
+  color: #ffffff;
+}
+
+.navy-translucent a,
+.navy-translucent h1,
+.navy-translucent h2,
+.navy-translucent h3,
+.navy-translucent h4 {
+  color: #ffffff;
+}
+
+/* Override tertiary button color */
+.btn-tertiary {
+	background-color: #ffffff;
+}
+
+.btn-tertiary:hover {
+	background-color: #ffffff;
+}
+
+/* Add styles for inserts and deletions */
+ins {
+	background-color:#9AE6B4;
+	text-decoration: none;
+}
+
+del {
+	background-color:#FEB2B2;
+}
+
+/* Reduce padding above login Forgot link */
+#personalIdInput {
+	margin-bottom: .2rem;
+}
+
+#mobile-personalIdInput {
+	margin-bottom: .2rem;
+}
+
+/* Fix styling for login disclaimer on mobile */
+.mobileHeader .actionItems .loginMenu .loginDisclaimer a {
+	display:inline;
+	color: #082247;
+	text-transform: initial;
+	padding:0;
+	font-size:.8rem;
+	text-decoration:underline;
+	font-weight:normal;
+}
+
+/* Keep underline on text links on alternate states */
+a:active, 
+a:focus, 
+a:hover {
+    text-decoration: underline;
+}
+
+/* Add behind-the-scenes background color to hero sections */
+.feature-hero-with-fade {
+	background-color: #082247;
+}
+
+/* Reduce the amount of padding on sticky CTAs */
+.bannerOpenAcct .cta-content {
+	padding: 20px;
+}
+
+@media (max-width: 767.98px) {
+.bannerOpenAcct .cta-content {
+    padding: 0;
+	}
+}
+
+/* Clean up individual location page styles */
+.locations-detail .location-info {
+    padding-top: 0px;
+	padding-bottom: 40px;
+}
+
+@media (min-width: 767.98px) {
+	.locations-detail .location-info {
+		padding-top: 60px;
+		padding-bottom: 90px;
+	}
+}
+
+.locations-detail .map-circle #map {
+    background-size: 150%;
+    box-shadow: 0 3px 16px rgb(0 0 0 / 12%);
+}
+
+.bank-hour span:nth-child(2) {
+	text-transform: lowercase;
+}
+
+/* Fix Locations map layout */
+.location-search {
+	height: calc(100vh - 74px);
+}
+
+@media (min-width: 992px) {
+	.location-search {
+		height: calc(100vh - 113px);
+	}	
+}
+
+@media (min-width: 992px) {
+	.location-search.row {
+		margin-right: 0;
+		margin-left: 0;
+	}	
+}
+
+/* Make links white in the sticky CTA banner */
+.bannerOpenAcct a {
+	color: #ffffff;
+}
+
+/* Fix rate table column widths to be more even */
+.ratesTable table thead th,
+.ratesTable table thead th:last-of-type {
+    width: auto;
+}
+
+/* Update styling of hero headlines */
+.feature-hero-with-fade .headline {
+    text-transform: none;
+    font-weight: 700;
+    max-width: 910px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Update styling of auto loan rate estimator */
+.calculatorWrapper {
+    padding: 0;
+}
+
+.calculatorInputWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+.calculatorWrapper #rateAge, 
+.calculatorWrapper #rateMileage, 
+.calculatorWrapper #score {
+    border-radius: 0;
+    width: auto;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border-bottom: 2px solid #dedede;
+}
+
+.calculatorWrapper #results-data-row {
+    margin: 34px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.calculatorWrapper #results-data-row > div {
+    padding: 2rem;
+    background-color: rgba(255,255,255,.6);
+    border-radius: 0 0 6px 6px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.1);
+    border-top: 3px solid #082247;
+    max-width: 280px;
+}
+
+.calculatorWrapper #results-data-row > div > div:first-child {
+    margin-bottom: 26px;
+}
+
+.calculatorWrapper #mainDisclaimer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.calculatorWrapper #results-disclaimers {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Fix Breadcrumb padding */
+@media (max-width: 1199.98px) {
+    .breadcrumbs {
+        padding: 25px 15px 15px 0px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .breadcrumbs {
+        padding: 15px 0px;
+    }
+}
+
+/* Size the social icons in the footer */
+footer.footer2 .socialIcons em, 
+footer.footer2 .socialIcons i, 
+footer.footer2 .socialIcons svg {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    fill: #FFF;
+}
