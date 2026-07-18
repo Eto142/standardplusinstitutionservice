@@ -1,323 +1,49 @@
-@include('dashboard.header')
+﻿@include('dashboard.header')
 
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-        <!--**********************************
-            Sidebar end
-        ***********************************-->
-
-        <!--**********************************
-            Content body start
-        ***********************************-->
-        
-        
-        
-        
-      <style>
-  .container {
-    width: 80%;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgba(240, 240, 240, 0.8); /* Transparent background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .marquee-container {
-    overflow: hidden;
-    border-radius: 10px;
-  }
-
-  .marquee {
-    color: white;
-    background-color: rgba(48, 92, 137, 0.8); /* Transparent background color */
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 10px;
-  }
-</style>
-        
-        
-        
-        
-        <div class="content-body">
-            <!-- row -->
-            <div class="container-fluid">
-                <div class="form-head mb-4">
-                    <h5 class="text-black font-w600 mb-0">Overview</h5>
-                </div>
-               <div class="col-sm-12">
-                   {{-- <div class="marquee-container">
-    <marquee class="marquee" behavior="scroll" direction="left" scrollamount="5">
-      If traditional withdrawal methods are not meeting your needs or if you're looking for a more convenient and secure way to access your funds, virtual card withdrawals are the way to go. They offer instant accessibility, security, convenience, global accessibility, budgeting control, and contribute to environmental sustainability. Embrace the future of finance with virtual cards!
-    </marquee>
-  </div> --}}
-
-
-    <div class="card" style="background-color: #305C89;">
-        <div class="card-body d-flex justify-content-between align-items-center">
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="form-head mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
             <div>
-                
-                <p style="color: white; margin-bottom: 0.5rem;">TOTAL BALANCE<span class="text-danger"></span></p>
-                <div class="balance-container">
-                    <h6 id="visibleBalance" class="fw-bold text-white" style="font-size: 1.25rem;">
-                        {{ Auth::user()->currency }}{{ number_format($balance, 2) }}
-                    </h6>
-                    <h6 id="hiddenBalance" class="fw-bold text-white hidden-balance d-none" style="font-size: 1.25rem;">
-                        ********
-                    </h6>
-                </div>
+                <h4 class="text-black font-w600 mb-1">Overview</h4>
+                <p class="text-muted mb-0">Welcome back, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</p>
             </div>
-            {{-- <div class="form-check form-switch d-flex align-items-center">
-                <input class="form-check-input m-0 me-2" type="checkbox" id="balanceToggle">
-                <label class="form-check-label text-white mb-0" for="balanceToggle" style="padding-left: 15px"></label>
-            </div> --}}
+            <a href="{{ url('transactions') }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                <i class="fa fa-history me-2"></i>Recent History
+            </a>
         </div>
-    </div>
-</div>
 
-                
-                
-                <style>
-                    /* Custom styles for the switch button */
-                    .form-check-input {
-                        width: 40px;
-                        height: 20px;
-                        margin-left: 10px;
-                    }
-                
-                    .form-check-input:checked + .form-check-label::before {
-                        background-color: #28a745; /* Green color when switch is ON */
-                    }
-                
-                    .form-check-label::before {
-                        width: 38px;
-                        height: 18px;
-                    }
-                </style>
-                
-                <script>
-                    // JavaScript code remains the same
-                </script>
-                
-                    <div class="d-flex justify-content-between">
-                          
-                    </div>
-                     <h6 style="padding-left: 16px;"><span class="text-primary"><?php
-$account_number = Auth::user()->a_number; // Assuming you have the account number
-$masked_account_number = str_repeat('*', strlen($account_number) - 4) . substr($account_number, -4);
-
-echo $masked_account_number;
-?>
- - ACTIVE</span></h6>
-                    <hr class="hr">
-
-                    <div class="row">
-             <div class="col-sm-12 col-lg-12">
-               <div class="">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h5><span class="text-black">{{Auth::user()->first_name}} {{Auth::user()->last_name}}</span></h5>
-                        <br>
-                        <h5 class="fw-bold text-black">
-                            <span id="visibleBalance2">{{Auth::user()->currency}}{{number_format($balance, 2)}}</span>
-                            <span id="hiddenBalance2" class="d-none">{{ str_repeat('*', strlen(number_format($balance, 2))) }}</span>
-                        </h5>
-                    </div>
-                    {{-- <div class="form-check form-switch d-flex align-items-center">
-                        <input class="form-check-input m-0 me-2" type="checkbox" id="balanceToggle2">
-                        <label class="form-check-label text-black mb-0" for="balanceToggle2" style="padding-left: 35px">Hide Balance</label>
-                    </div> --}}
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const balanceToggle2 = document.getElementById('balanceToggle2');
-        const visibleBalance2 = document.getElementById('visibleBalance2');
-        const hiddenBalance2 = document.getElementById('hiddenBalance2');
-
-        balanceToggle2.addEventListener('change', function () {
-            if (this.checked) {
-                visibleBalance2.classList.add('d-none');
-                hiddenBalance2.classList.remove('d-none');
-            } else {
-                visibleBalance2.classList.remove('d-none');
-                hiddenBalance2.classList.add('d-none');
-            }
-        });
-    });
-</script>
-
-
-
-
-
-
-                    <div class="balance-box">
-        <div class="balance-box-content">
-            <div class="balance-box-left">Ledger balance: {{ Auth::user()->currency }}{{ number_format($balance, 2) }} </div>
-            <div class="balance-box-right"><a href='{{url('transactions')}}' style='color:white'><i class="fa fa-history"></i> History</a></div>
-        </div>
-    </div>
-    
-    <style>
-.balance-box {
-    background-color: #305C89;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.balance-box-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.balance-box-left,
-.balance-box-right {
-    font-weight: bold;
-}
-
-.history-icon {
-    margin-right: 5px;
-}
-
-/* Responsive Styling */
-@media screen and (max-width: 768px) {
-    .balance-box {
-        padding: 15px;
-        margin: 15px 0;
-    }
-
-    .balance-box-content {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .balance-box-left,
-    .balance-box-right {
-        margin-right: 10px;
-        font-size: 0.8em; /* Adjust font size for smaller screens */
-    }
-
-    .balance-box-right a {
-        font-size: 0.8em; /* Adjust font size for smaller screens */
-        margin-left: auto; /* Move "History" link to the right end */
-    }
-
-    .history-icon {
-        font-size: 1.3em; /* Adjust icon size for smaller screens */
-    }
-}
-
-</style>
-    
-<div class="grid-container-two">
-    <div class="d-block text-center">
-        <div class="withdraw-icon bg-danger">
-            <a href="{{route('bank')}}">&#128179;</a>
-        </div>
-        <a href="{{route('bank')}}" style='color:black'><span>Bank Transfer</span></a>
-    </div>
-    <div class="d-block text-center">
-        <div class="withdraw-icon bg-warning">
-            <a href="{{route('cryptopage')}}">
-             <img src="bitcoin.png" alt="Loan" style="width: 24px; height: 24px;"></a>
-        </div>
-        <a href="{{route('cryptopage')}}" style='color:black'><span>Crypto</span></a>
-    </div>
-    {{-- <div class="d-block text-center">
-        <div class="withdraw-icon bg-info">
-            <a href="{{route('paypal')}}">
-             <img src="paypal.png" alt="Loan" style="width: 24px; height: 24px;"></a>
-        </div>
-        <span><a href="{{route('paypal')}}" style='color:black'>Paypal</a></span>
-    </div> --}}
-  
-
-    {{-- <div class="d-block text-center">
-        <div class="withdraw-icon bg-succes">
-            <a href="{{ route('deposit') }}">&#10003;</a>
-        </div>
-        <a href="{{ route('deposit') }}" style="color:black;">
-            <span>Check Deposit</span>  
-        </a>
-    </div> --}}
-    
-
-    <div class="d-block text-center">
-        <div class="withdraw-icon bg-dark">
-            <a href="{{route('loan')}}">
-                
-                 <img src="loan.png" alt="Loan" style="width: 24px; height: 24px;"></a>
-        </div>
-        <a href="{{route('loan')}}" style='color:black'><span>Loan</span></a>
-    </div>
-</div>
-
-
-                   
-
-                   
-
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-body pb-1">
-                                <div class="row align-items-center">
-                                    <div class="col-xl-5 col-xxl-12 col-md-5">
-                                        <h4 class="fs-20 text-black mb-4"></h4>
-                                        <div class="row">
-
-                                        </div>
-                                    </div>
-                                    
-                                    <div id="bankCarousel" class="carousel slide" data-bs-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="bank-advert1.jpg" class="d-block w-100" alt="Bank Advert 1" >
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="bank-advert2.jpg" class="d-block w-100" alt="Bank Advert 2">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="bank-advert3.jpg" class="d-block w-100" alt="Bank Advert 3">
-                                            </div>
-                                        </div>
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#bankCarousel" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button" data-bs-target="#bankCarousel" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
-                                    </div>
-                                    
-                                            {{-- <div class="col-12">
-                                                <div class="bg-info rounded text-center p-3">
-                                                    <div class="d-inline-block position-relative donut-chart-sale mb-3">
-                                                        <span class="donut1" data-peity='{ "fill": ["rgb(255, 255, 255)", "rgba(255, 255, 255, 0.2)"],   "innerRadius": 33, "radius": 10}'>0/100</span>
-                                                      
-                                                    </div>
-                                                    <span class="fs-14 text-white d-block">Loans</span>
-                                                </div>
-                                            </div> --}}
-                                        </div>
-                                    </div>
+        <div class="row g-4 mb-4">
+            <div class="col-12">
+                <div class="card border-0 rounded-4 overflow-hidden shadow-sm" style="background: linear-gradient(135deg, #0f3b63 0%, #305c89 55%, #4f7fa8 100%);">
+                    <div class="card-body p-4 p-lg-5">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8 col-md-7">
+                                <div class="text-white-50 small text-uppercase mb-2">Total balance</div>
+                                <div class="d-flex align-items-center gap-3 flex-wrap">
+                                    <h2 id="visibleBalance" class="fw-bold text-white mb-0">
+                                        {{ Auth::user()->currency }}{{ number_format($balance, 2) }}
+                                    </h2>
+                                    <h2 id="hiddenBalance" class="fw-bold text-white mb-0 d-none">********</h2>
+                                    <label class="form-check form-switch mb-0 d-flex align-items-center gap-2 ms-2">
+                                        <input class="form-check-input m-0" type="checkbox" id="balanceToggle" role="switch">
+                                        <span class="text-white-50 small">Show / Hide</span>
+                                    </label>
+                                </div>
+                                <div class="mt-3 d-flex align-items-center gap-3 flex-wrap">
+                                    <span class="badge rounded-pill bg-white bg-opacity-10 text-white px-3 py-2">
+                                        <i class="fa fa-user-circle me-2"></i>
+                                        {{ Auth::user()->a_number ? 'Account ' . str_repeat('*', strlen(Auth::user()->a_number) - 4) . substr(Auth::user()->a_number, -4) : 'Account active' }}
+                                    </span>
+                                    <span class="badge rounded-pill bg-success bg-opacity-20 text-white px-3 py-2">
+                                        <i class="fa fa-check-circle me-2"></i>Active
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-5 mt-3 mt-md-0">
+                                <div class="bg-white bg-opacity-10 rounded-4 border border-white border-opacity-10 p-3 text-white">
+                                    <div class="small text-white-50">Estimated BTC value</div>
+                                    <div class="display-6 fw-bold mb-0">{{ number_format($btc ?? 0, 6) }}</div>
+                                    <div class="small text-white-50 mt-2">Live market estimate</div>
                                 </div>
                             </div>
                         </div>
@@ -325,24 +51,170 @@ echo $masked_account_number;
                 </div>
             </div>
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
 
-        <!--**********************************
-            Footer start
-        ***********************************-->
+        <div class="row g-4 mb-4">
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 rounded-4 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <div class="text-muted small text-uppercase">Wallet</div>
+                                <h5 class="text-black mb-0">Ledger balance</h5>
+                            </div>
+                            <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary">Primary</span>
+                        </div>
+                        <div class="fs-4 fw-bold text-black mb-3">
+                            {{ Auth::user()->currency }}{{ number_format($balance, 2) }}
+                        </div>
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>Account owner</span>
+                            <span>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-xl-4 col-md-6">
+                <div class="card border-0 rounded-4 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="text-muted small text-uppercase">Performance</div>
+                        <h5 class="text-black mb-3">Quick insights</h5>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="text-muted">Deposit total</span>
+                            <span class="fw-bold text-success">{{ Auth::user()->currency }}{{ number_format($deposit ?? 0, 2) }}</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="text-muted">Withdrawal total</span>
+                            <span class="fw-bold text-danger">{{ Auth::user()->currency }}{{ number_format($withdrawal ?? 0, 2) }}</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-muted">BTC estimate</span>
+                            <span class="fw-bold text-primary">{{ number_format($btc ?? 0, 6) }} BTC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    @include('dashboard.footer')
+            <div class="col-xl-4 col-md-12">
+                <div class="card border-0 rounded-4 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="text-muted small text-uppercase">Security</div>
+                        <h5 class="text-black mb-3">Account status</h5>
+                        <div class="alert alert-success border-0 rounded-4 mb-3">
+                            <i class="fa fa-shield me-2"></i>Your account is fully verified and active.
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-muted">Protection level</span>
+                            <span class="badge rounded-pill bg-success text-white px-3 py-2">High</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="row g-4 mb-4">
+            <div class="col-12">
+                <div class="card border-0 rounded-4 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <h5 class="text-black mb-1">Quick actions</h5>
+                                <p class="text-muted mb-0">Jump into the most common services in one click.</p>
+                            </div>
+                        </div>
 
+                        <div class="row g-3">
+                            <div class="col-lg-3 col-md-6">
+                                <a href="{{ route('bank') }}" class="text-decoration-none">
+                                    <div class="rounded-4 p-4 h-100 text-center shadow-sm border border-light bg-light">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-danger text-white mb-3" style="width: 58px; height: 58px;">
+                                            <i class="fa fa-university fa-lg"></i>
+                                        </div>
+                                        <div class="fw-bold text-dark">Bank Transfer</div>
+                                        <small class="text-muted d-block mt-1">Move funds securely</small>
+                                    </div>
+                                </a>
+                            </div>
 
+                            <div class="col-lg-3 col-md-6">
+                                <a href="{{ route('cryptopage') }}" class="text-decoration-none">
+                                    <div class="rounded-4 p-4 h-100 text-center shadow-sm border border-light bg-light">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-warning text-dark mb-3" style="width: 58px; height: 58px;">
+                                            <i class="fa fa-bitcoin fa-lg"></i>
+                                        </div>
+                                        <div class="fw-bold text-dark">Crypto</div>
+                                        <small class="text-muted d-block mt-1">Access digital asset services</small>
+                                    </div>
+                                </a>
+                            </div>
 
+                            <div class="col-lg-3 col-md-6">
+                                <a href="{{ route('loan') }}" class="text-decoration-none">
+                                    <div class="rounded-4 p-4 h-100 text-center shadow-sm border border-light bg-light">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-dark text-white mb-3" style="width: 58px; height: 58px;">
+                                            <i class="fa fa-money fa-lg"></i>
+                                        </div>
+                                        <div class="fw-bold text-dark">Loan</div>
+                                        <small class="text-muted d-block mt-1">Open a financing request</small>
+                                    </div>
+                                </a>
+                            </div>
 
+                            <div class="col-lg-3 col-md-6">
+                                <a href="{{ url('transactions') }}" class="text-decoration-none">
+                                    <div class="rounded-4 p-4 h-100 text-center shadow-sm border border-light bg-light">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-info text-white mb-3" style="width: 58px; height: 58px;">
+                                            <i class="fa fa-history fa-lg"></i>
+                                        </div>
+                                        <div class="fw-bold text-dark">Transactions</div>
+                                        <small class="text-muted d-block mt-1">Review every entry</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="card border-0 rounded-4 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="text-black mb-0">Market update</h5>
+                            <span class="text-muted small">Live estimate</span>
+                        </div>
 
+                        <div id="bankCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner rounded-4 overflow-hidden">
+                                <div class="carousel-item active">
+                                    <img src="bank-advert1.jpg" class="d-block w-100" alt="Bank Advert 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="bank-advert2.jpg" class="d-block w-100" alt="Bank Advert 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="bank-advert3.jpg" class="d-block w-100" alt="Bank Advert 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#bankCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#bankCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+@include('dashboard.footer')
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -350,16 +222,16 @@ echo $masked_account_number;
         const visibleBalance = document.getElementById('visibleBalance');
         const hiddenBalance = document.getElementById('hiddenBalance');
 
-        balanceToggle.addEventListener('change', function () {
-            if (this.checked) {
-                visibleBalance.classList.add('d-none');
-                hiddenBalance.classList.remove('d-none');
-            } else {
-                visibleBalance.classList.remove('d-none');
-                hiddenBalance.classList.add('d-none');
-            }
-        });
+        if (balanceToggle) {
+            balanceToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    visibleBalance.classList.add('d-none');
+                    hiddenBalance.classList.remove('d-none');
+                } else {
+                    visibleBalance.classList.remove('d-none');
+                    hiddenBalance.classList.add('d-none');
+                }
+            });
+        }
     });
 </script>
-
-    
