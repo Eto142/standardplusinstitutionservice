@@ -1,105 +1,77 @@
 @include('dashboard.header')
-        <!--**********************************
-            Content body start
-        ***********************************-->
-        <div class="content-body">
-        @if (session('error'))
+
+<div class="content-body">
+    @if (session('error'))
         <div class="alert alert-danger" role="alert">
-				<b>Error!</b>{{ session('error') }}
-		<button type="button" class="btn-close" data-bs-dismiss="alert"
-																aria-label="Close"></button>
-	   </div>
-        @elseif (session('status'))
-		<div class="alert alert-success" role="alert">
-		<b>Success!</b> {{ session('status') }}
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-        @endif
-            <div class="container-fluid">
-                <h2 class="text-black font-w600 mb-0 me-auto mb-2 pe-3">Crypto Withdrawal</h2>
-                
-                <div class="row">
-                    <div class="col-xl-4">
-						<div class="row">
-							
-							
-						</div>
-                    </div>
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Balance: {{Auth::user()->currency}}{{number_format($balance, 2, '.', ',')}}</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p>You're about to transfer from your account's available balance. This action cannot be reversed. Be sure to enter correct details.</p>
-                                        <div id="response_code"></div>
-                                        <form  action="{{route('crypto.transfer')}}" method="POST">
-                                                 @csrf
-                                                  <input type="hidden" class="form-control" name="email" value=" {{ Auth::user()->email}}"/>
-                                            <p id="server"></p>
-                                            <div id="content-one">
-                                                <div class="form-group mb-3">
-                                                    <label>Amount</label>
-                                                    <input id="pin_amount" type="number" name="amount" class="form-control" placeholder="Enter Amount" required>
-                                                </div>
-                                                <div class="form-group mb-3">
-                                                    <label>Wallet Type</label>
-                                                    <select class="form-select" name="wallet_type">
-                                                      <option value="Bitcoin" selected>Bitcoin</option>
-                                                      <option value="Ethereum">Ethereum</option>
-                                                      <option value="Litecoin">Litecoin</option>
-                                                      <option value="USDT">USDT</option>
-                                                     </select>
-                                                </div>
-                                                <div class="form-group mb-3">
-                                                    <label>Wallet Address</label>
-                                                    <input id="pin_account_number" type="text" name="wallet_address" class="form-control" Required>
-                                                </div>
-                                        
-                                                <div class="form-group mb-3">
-                                                    <label>Transaction Pin</label>
-                                                    <input id="pin_account_number" type="number" name="transaction_pin" maxlength="4" class="form-control" Required>
-                                                </div>
-                                                
+            <b>Error!</b> {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @elseif (session('status'))
+        <div class="alert alert-success" role="alert">
+            <b>Success!</b> {{ session('status') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
-                                                <button type="submit" id="waitone" class="btn btn-primary w-100" >Proceed</button>
-                                            </div> 
-                                        </form>
+    <div class="container-fluid">
+        <div class="form-head mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div>
+                <h4 class="text-black font-w600 mb-1">Make Deposit</h4>
+                <p class="text-muted mb-0">Submit your deposit request with your account details.</p>
+            </div>
+            <div class="badge rounded-pill bg-primary px-3 py-2 text-white">
+                Balance: {{ Auth::user()->currency }}{{ number_format($balance, 2, '.', ',') }}
+            </div>
+        </div>
 
-                                            <!-- Start modal -->
-                                            <div class="modal fade transfer_pin_modal" id="reqLoan">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title">OTP Pin</h5>
-                                                            <button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="alert alert-warning">
-                                                                Enter a valid OTP pin for this transaction.
-                                                            </div>
-                                                            <div class="input-pin-grid">
-                                                                <input  type="number"  name="otp" class="form-control form-control-lg">
-                                                            </div>
-                                                            <button type="submit" id="waitone" class="btn btn-primary w-100" >Proceed</button>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                       
-                                    </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="card border-0 rounded-4 shadow-sm">
+                    <div class="card-body p-4 p-lg-5">
+                        <div class="mb-4">
+                            <h5 class="text-black mb-2">Deposit funds</h5>
+                            <p class="text-muted mb-0">Use this form to submit a bank deposit request. Enter the amount, your email, upload the required documents if needed, and confirm with your transaction PIN.</p>
+                        </div>
+
+                        <form action="{{ route('make.deposit') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="email" value="{{ Auth::user()->email }}">
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Amount</label>
+                                    <input type="number" name="amount" class="form-control" placeholder="Enter amount" min="1" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" name="email_display" class="form-control" value="{{ Auth::user()->email }}" readonly>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Front cheque image</label>
+                                    <input type="file" name="front_cheque" class="form-control" accept="image/png,image/jpeg,pdf">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">License / ID document</label>
+                                    <input type="file" name="license" class="form-control" accept="image/png,image/jpeg,pdf">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label">Transaction PIN</label>
+                                    <input type="password" name="transaction_pin" class="form-control" maxlength="4" placeholder="Enter 4-digit transaction PIN" required>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary px-4">Submit deposit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
-@include('dashboard.footer')
+    </div>
+</div>
+
