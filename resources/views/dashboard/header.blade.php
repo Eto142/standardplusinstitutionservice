@@ -277,7 +277,7 @@ href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.mi
 						</a>
 
                     </li>
-                    {{-- <li>
+                    <li>
                         <a class="" href="{{route('paypal')}}" aria-expanded="false">
                         <i class="fa fa-paypal"></i>
 							<span class="nav-text">Paypal Withdrawal</span>
@@ -288,13 +288,13 @@ href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.mi
                     <i class="fa fa-spinner"></i>
 							<span class="nav-text">Skrill Withdrawal</span>
 						</a>
-                    </li> --}}
-{{-- 
+                    </li> 
+
                     <li><a class="" href="" aria-expanded="false">
                         <i class="fa fa-spinner"></i>
                                 <span class="nav-text">Cheque Deposit</span>
                             </a>
-                        </li> --}}
+                        </li> 
                     <li><a class="" href="{{route('loan')}}" aria-expanded="false">
                     <i class="fa fa-pie-chart"></i>
 							<span class="nav-text">Apply for Loan</span>
