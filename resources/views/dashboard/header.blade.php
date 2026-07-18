@@ -153,9 +153,9 @@ href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.mi
         ***********************************-->
         <div class="nav-header">
             <a href="{{route('dashboard')}}" class="brand-logo">
-                <img class="" src="{{asset('logo.png')}}" alt="" width="95px" >
-                <img class="logo-compact" src="{{asset('logo.png')}}" alt="">
-                <img class="brand-title" src="{{asset('logo.png')}}" alt="" >
+                <img class="" src="{{asset('logo1.png')}}" alt="" width="95px" >
+                <img class="logo-compact" src="{{asset('logo1.png')}}" alt="">
+                <img class="brand-title" src="{{asset('logo1.png')}}" alt="" >
             </a>
 
             <div class="nav-control">
