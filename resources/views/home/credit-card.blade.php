@@ -394,7 +394,8 @@
                                             <div class="col-md-6 col-xs-12">
                             <a href="">
                                 <i class="fas fa-email" aria-label="mail"></i>
-                                support@standardplusinstitutionservice.online
+                                firstonline.kruggercoin@consultant.com<br>
+                                stvalrservice@consultant.com
                             </a>
                         </div>
                 </div>

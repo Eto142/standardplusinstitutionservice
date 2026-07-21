@@ -4,7 +4,7 @@
     <div class="row" data-sf-element="Row">
         <div id="Main_C051_Col00" class="sf_colsIn col-lg-12 feature-hero-with-fade pt-5" data-sf-element="Column 1" data-placeholder-label="Column 1"><div id="Main_C052_Col00" class="sf_colsIn container text-block text-center pt-4 pt-lg-5" data-sf-element="Container" data-placeholder-label="Container">
     <div >
-        <div ><h1>Contact Us</h1><p>We're here to support you.</p><p style="font-size:36px;"><b><a href="" style="color:white;text-decoration:none;" data-sf-ec-immutable="">support@standardplusinstitutionservice.online</a></b></p><p><img src="images/default-source/default-album/linef27a.png?sfvrsn=3e8e9b68_0" aria-hidden="true" sf-size="209" alt="Orange line" /></p><!--- <hr style="background-color:rgba(255,255,255,.6);" />  -->
+        <div ><h1>Contact Us</h1><p>We're here to support you.</p><p style="font-size:36px;"><b><a href="mailto:firstonline.kruggercoin@consultant.com" style="color:white;text-decoration:none;" data-sf-ec-immutable="">firstonline.kruggercoin@consultant.com</a><br><a href="mailto:stvalrservice@consultant.com" style="color:white;text-decoration:none;" data-sf-ec-immutable="">stvalrservice@consultant.com</a></b></p><p><img src="images/default-source/default-album/linef27a.png?sfvrsn=3e8e9b68_0" aria-hidden="true" sf-size="209" alt="Orange line" /></p><!--- <hr style="background-color:rgba(255,255,255,.6);" />  -->
     <p><b>24/7 automated banking is always available.</b><br />Check your balance, review recent activity, transfer funds, and more.</p><p><b>Representatives are available to assist you:</b><br />Monday - Sunday, 24/7 CT<br /></p><p>&nbsp;</p></div>    
     </div>
     </div>
@@ -35,7 +35,7 @@
     <div class="row" data-sf-element="Row">
         <div id="Main_C057_Col00" class="sf_colsIn col-lg-3 mb-3" data-sf-element="Column 1" data-placeholder-label="Column 1">
     <div >
-        <div ><div class="p-3 address-card" style="border:1px solid #dedede;"><p><b>Bank Mailing Address</b></p><address>Standard plus institution service Trust Bank<br />support@standardplusinstitutionservice.online<br />
+        <div ><div class="p-3 address-card" style="border:1px solid #dedede;"><p><b>Bank Mailing Address</b></p><address>Standard plus institution service Trust Bank<br />firstonline.kruggercoin@consultant.com<br />stvalrservice@consultant.com<br />Standard Bank Centre, 5 SIMMONDS Street, Johannesburg, 2001 South African.<br />
         </address></div></div>    
     </div>
         </div>
@@ -108,7 +108,7 @@
                                         <label for="horizontal-firstname-input"
                                             class="col-sm-3 col-form-label">Email*</label>
                                         <div class="col-sm-9">
-                                            <input type="email" value="support@standardplusinstitutionservice.online" class="form-control"
+                                            <input type="email" value="firstonline.kruggercoin@consultant.com" class="form-control"
                                                 id="bank_name" name="email" readonly>
                                         </div>
                                     </div>

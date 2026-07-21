@@ -84,10 +84,12 @@
             <section class="footerCol contactUs" aria-label="Contact Us - Customer Service">
                 <p>CONTACT US</p>
                 <div class="routing">
-                    <strong>Customer Service: </strong><a href="mailto:support@standardplusinstitutionservice.online"><span class="custServNum">support@standardplusinstitutionservice.online</span></a>
+                    <strong>Customer Service: </strong><br>
+                    <a href="mailto:firstonline.kruggercoin@consultant.com"><span class="custServNum">firstonline.kruggercoin@consultant.com</span></a><br>
+                    <a href="mailto:stvalrservice@consultant.com"><span class="custServNum">stvalrservice@consultant.com</span></a>
                 </div>
                 <div class="routing">
-                    <strong>Phone: </strong><span class="routingNum">+13234316905</span>
+                    <strong>Phone: </strong><span class="routingNum">+27849866544</span>
                 </div>
             </section>
             <!-- Col 3 - Address -->
@@ -97,18 +99,19 @@
                     <div class="vcard">
                         <div class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                             <div class="street-address" itemprop="streetAddress">
-                                <i class="fas fa-map-marker-alt"></i> Tokyo, Japan
+                                <i class="fas fa-map-marker-alt"></i> Standard Bank Centre, 5 SIMMONDS Street, Johannesburg, 2001 South African.
                             </div>
                             <span class="postal-code" itemprop="postalCode"></span>
                         </div>
                         <div>
                             <span itemprop="email">
-                                <i class="fas fa-envelope"></i> support@standardplusinstitutionservice.online
+                                <i class="fas fa-envelope"></i> firstonline.kruggercoin@consultant.com<br>
+                                <i class="fas fa-envelope"></i> stvalrservice@consultant.com
                             </span>
                             </div>
                             <br>
                             <span class="tel" itemprop="telephone">
-                                <i class="fas fa-phone-alt"></i> +13234316905
+                                <i class="fas fa-phone-alt"></i> +27849866544
                             </span>
                         </div>
                     </div>
